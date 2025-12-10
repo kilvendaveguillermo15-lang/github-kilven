@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Simple light gray background */
+            color: #333; /* Dark text for readability */
+            line-height: 1.6;
+        }
+        
+        /* Container for centering content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Navigation Bar */
+        nav {
+            background-color: #fff;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 25px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+        nav ul li a:hover {
+            color: #007bff; /* Simple blue hover */
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 20px 60px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        /* Home Section */
+        #home {
+            background-color: #fff;
+            padding: 40px;
+            margin: 20px;
+        }
+        #home .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+        }
+        #home h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        #home p {
+            font-size: 1.5em;
+            max-width: 700px;
+            font-weight: 300;
+            color: #666;
+        }
+        #home a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        #home a:hover {
+            background-color: #0056b3;
+        }
+        
+        /* About Me Section */
+        #about {
+            background-color: #fff;
+            padding: 40px;
+            margin: 20px;
+        }
+        #about .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        #about h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        #about p {
+            font-size: 1.3em;
+            max-width: 700px;
+            font-weight: 300;
+            color: #666;
+        }
+        
+        /* Projects Section */
+        #projects {
+            background-color: #fff;
+            padding: 40px;
+            margin: 20px;
+        }
+        #projects h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+        }
+        .project {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .project h3, .project h4 {
+            margin-top: 0;
+            font-weight: 600;
+            color: #333;
+        }
+        .project a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .project a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Contacts Section */
+        #contacts {
+            background-color: #fff;
+            padding: 40px;
+            margin: 20px;
+        }
+        #contacts h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-info p {
+            margin: 15px 0;
+            font-size: 1.3em;
+            font-weight: 400;
+            color: #666;
+        }
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #fff;
+            color: #666;
+            font-weight: 300;
+            border-top: 1px solid #ddd;
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 15px 0;
+            }
+            section {
+                padding: 80px 15px 40px;
+            }
+            #home .profile-pic {
+                width: 140px;
+                height: 140px;
+            }
+            #about .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+            #home h1 {
+                font-size: 2.5em;
+            }
+            #about h1 {
+                font-size: 2em;
+            }
+            #projects h2, #contacts h2 {
+                font-size: 1.8em;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="home">
+        <div class="container">
+            <img src="kilvendave.jpg" alt="Profile Picture" class="profile-pic">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm Guillermo Kilven dave T.</p>
+            <p>BSIT-1F</p>
+            <a href="#about">Learn More</a>
+        </div>
+    </section>
+    
+    <section id="about">
+        <div class="container">
+            <img src="kilvenn.jfif" alt="Profile Picture" class="profile-pic">
+            <h1>About Me</h1>
+            <p>My name is Guillermo kilven dave T. I'm a 1st-year college student studying BSIT at Occidental Mindoro State College (OMSC). I'm a unique individual with a world of experiences, interests, and aspirations to share—just like you. I'm on a personal journey through life, seeking to learn, grow, and connect with others.</p>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project">
+                    <h3>ACTIVITY 1: The Story in The Book</h3>
+                    <a href="ACT1.html">VIEW YOUR ACTIVITY</a>
+                </div>
+                
+                <div class="project">
+                    <h3>ACTIVITY 2: RECIPE</h3>
+                    <a href="ACT2.html">VIEW YOUR ACTIVITY</a>
+                </div>
+                
+                <div class="project">
+                    <h3>ACTIVITY 3: MENU</h3>
+                    <a href="ACT3.html">VIEW YOUR ACTIVITY</a>
+                </div>
+                
+                <div class="project">
+                    <h4>JavaScript Project</h4>
+                    <a href="javascript-project.html">VIEW YOUR ACTIVITY</a>
+                </div>
+                
+                <div class="project">
+                    <h4>ACTIVITY 4: BIKE_ACT4</h4>
+                    <a href="ACT4.html">VIEW YOUR ACTIVITY</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contacts">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <p>Email: <a href="kilvendaveguillermo15@gmail.com">kilvendaveguillermo15@gmail.com</a></p>
+                <p>Contact #: <a href="tel:09422029097">09422029097</a></p>
+                <p>Facebook: <a href="https://www.facebook.com/kilven guillermo">kilven Guillermo</a></p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 Guillermo Kilven dave T. All rights reserved.</p>
+    </footer>
+</body>
+</html>
